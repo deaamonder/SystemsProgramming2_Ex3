@@ -6,9 +6,23 @@
 using namespace std;
 
 namespace ariel{
-    Board::Board(vector<Land> lands, vector<Settelment> settelments, vector<Road> Roads){
+    Board::Board(vector<Land>& lands, vector<Settelment>& settelments, vector<Road>& Roads){
         this->lands = lands;
         this->settelments = settelments;
         this->roads = Roads;
+    }
+
+    vector<Land> Board::getLands(){
+        return this->lands;
+    }
+
+    void Board::placeSettelmentOnBoard(vector<Land> crossRoad){
+        Settelment s("settelment",crossRoad);
+        this->settelments.push_back(s);
+    }
+
+    void Board::placeRoadOnBoard(Settelment settelement){
+        Road r("road");
+        this->roads.push_back(r);
     }
 }

@@ -36,6 +36,6 @@ namespace ariel{
             * the function gets a settelment that the road must be connected to 
             * and place the road following to the settelment on the board. 
             */
-            void placeRoadOnRoad(Settelment settelment);
+            void placeRoadOnBoard(Settelment settelment);
     };
 }
