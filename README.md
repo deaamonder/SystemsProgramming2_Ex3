@@ -30,8 +30,9 @@ To compile the project, use the provided makefile. Simply navigate to the projec
 make
 
 This will compile the project and generate an executable named CatanGame. To run the game, execute:
-
+```bash
 ./CatanGame
+```
 
 Game Instructions
 Follow the prompts and instructions provided in the Demo.cpp file to play the game. Each player takes turns placing settlements and roads, rolling dice, trading resources, and buying development cards. The game continues until one player reaches 10 points, at which point they are declared the winner.
