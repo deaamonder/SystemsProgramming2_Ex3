@@ -1,3 +1,6 @@
+#ifndef CATAN_HPP
+#define CATAN_HPP
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,6 +8,8 @@
 #include "board.hpp"
 #include "card.hpp"
 #include "land.hpp"
+#include "settelment.hpp"
+#include "road.hpp"
 
 using namespace std;
 
@@ -19,11 +24,13 @@ namespace ariel {
                          Land("Agricultural land",9), Land("Agricultural land",12),
                          Land("Pasture land",2), Land("Pasture land",4), Land("Pasture land",5),
                          Land("Pasture land",11), Land("Hills",6), Land("Hills",10), Land("Hills",5),
-                         Land("Desert",NULL)
+                         Land("Desert",0)
             };
+            vector<Road> roads;
+            vector<Settelment> settelments;
 
         public:
-            Catan(Player p1, Player p2, Player p3) : player1(p1),player2(p2),player3(p3),gameBoard(lands){
+            Catan(Player p1, Player p2, Player p3) : player1(p1),player2(p2),player3(p3),gameBoard(lands,settelments,roads){
                 
             }
             /*
@@ -41,3 +48,5 @@ namespace ariel {
             void printWinner();
     };
 }
+
+#endif // CATAN_HPP

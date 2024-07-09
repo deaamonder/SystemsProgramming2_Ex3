@@ -1,3 +1,6 @@
+#ifndef LAND_HPP
+#define LAND_HPP
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -73,31 +76,20 @@ namespace ariel{
             /*
             * return the number of neighbors the land has.
             */
-            int numOfNeighbors(){
-                return neighbors.size();
-            }
+            int numOfNeighbors();
             /*
             * simple getter
             */
-            vector<Land> getNeighbors(){
-                return this->neighbors;
-            }
+            vector<Land> getNeighbors();
             /*
             * this function get a Land and check if this land is its neighbor.
             * if this is the case return true and return false else.
             * note : assuming there are no lands from the same type with the same 
             * number.
             */
-            bool isNeighbor(Land other){
-                bool res = false;
-                for(int i=0; i<other.numOfNeighbors(); i++){
-                    if(other.getNeighbors()[i].getType() == this->getType() && 
-                        other.getNeighbors()[i].getNumber() == this->getNumber()){
-                        res =true;
-                    }
-                }
-                return res;
-            }
+            bool isNeighbor(Land other);
 
     };
 }
+
+#endif // LAND_HPP

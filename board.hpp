@@ -1,4 +1,6 @@
 #pragma once 
+#ifndef BOARD_HPP
+#define BOARD_HPP
 
 #include <iostream>
 #include <vector>
@@ -26,6 +28,14 @@ namespace ariel{
             */
             vector<Land> getLands();
             /*
+            * getter for settelments
+            */
+            vector<Settelment> getSettelments();
+            /*
+            * getter for roads
+            */
+            vector<Road> getRoads();
+            /*
             * function to place a settelment on the board.
             * the function gets an array of three neighbors lands 
             * and placing the settelment between those lands. 
@@ -39,3 +49,5 @@ namespace ariel{
             void placeRoadOnBoard(Settelment settelment);
     };
 }
+
+#endif // BOARD_HPP

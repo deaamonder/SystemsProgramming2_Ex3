@@ -1,3 +1,6 @@
+#ifndef SETTELMENT_HPP
+#define SETTELMENT_HPP
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,6 +25,10 @@ namespace ariel{
             */
             string getName();
             /*
+            * city getter
+            */
+            bool get_city();
+            /*
             * city setter 
             */
             void setCity(bool val);
@@ -32,3 +39,5 @@ namespace ariel{
         
     };
 }
+
+#endif // SETTELMENT_HPP

@@ -1,3 +1,6 @@
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -65,16 +68,21 @@ namespace ariel{
             /*
             * set a settelment
             */
-            void setSettelment(Settelment s){
-                this->settelments.push_back(s);
-                this->points++;
-            }
+            void setSettelment(Settelment s);
             /*
             * matterials getter
             */
-            vector<string> getMatterials(){
-                return this->matterials;
-            }
+            vector<string> getMatterials();
+            /*
+            * points getter
+            */
+            int getPoints();
+            /*
+            * name getter
+            */
+            string getName();
 
     };
 }
+
+#endif // PLAYER_HPP

@@ -10,6 +10,10 @@ namespace ariel{
         return this->name;
     }
 
+    bool Settelment::get_city(){
+        return this->isCity;
+    }
+
     void Settelment::setCity(bool val){
         this->isCity = val;
     }

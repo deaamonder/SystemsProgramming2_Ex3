@@ -18,8 +18,8 @@ namespace ariel{
         vector<int> placesIndex = {0};
         int count = 0;
         //check if we can place a settelment
-        for(int i=0; i<places.size(); i++){
-            for(int j =0; j<lands.size(); j++){
+        for(size_t i=0; i<places.size(); i++){
+            for(size_t j =0; j<lands.size(); j++){
                 if(lands[j].getType() == places[i] && lands[j].getNumber() == placesNum[i]){
                     count++;
                     placesIndex.push_back(j);
@@ -69,6 +69,21 @@ namespace ariel{
         }
     }
 
+    /*
+    * helper function that gets two arrays and two indexes and swap
+    * between the first array element at the first index and the second array 
+    * element at the second index .
+    */
+    void swapElements(vector<string>& firstArr, vector<string>& secondArr, int firstIndex, int secondIndex){
+        if(firstIndex > firstArr.size() || secondIndex > secondArr.size()){
+            cerr << "cant swap elements" << endl;
+            return;
+        }
+        string temp = firstArr[firstIndex];
+        firstArr[firstIndex] = secondArr[secondIndex];
+        secondArr[secondIndex] = temp;
+    }
+
     void Player::trade(Player other, string myThing, string othersThing, int myThingC, int otherThingC){
         if(this->matterials.empty() || other.getMatterials().empty()){
             cerr << "trade cant be placed" << endl;
@@ -116,21 +131,6 @@ namespace ariel{
                 }
             }
         } 
-    }
-
-    /*
-    * helper function that gets two arrays and two indexes and swap
-    * between the first array element at the first index and the second array 
-    * element at the second index .
-    */
-    void swapElements(vector<string>& firstArr, vector<string>& secondArr, int firstIndex, int secondIndex){
-        if(firstIndex > firstArr.size() || secondIndex > secondArr.size()){
-            cerr << "cant swap elements" << endl;
-            return;
-        }
-        string temp = firstArr[firstIndex];
-        firstArr[firstIndex] = secondArr[secondIndex];
-        secondArr[secondIndex] = temp;
     }
 
     void Player::buyDevelopmentCard(){
@@ -196,16 +196,16 @@ namespace ariel{
             }
         }
         else if(type == 2){
-            knightCard kCard();
+            knightCard kCard;
             this->cardsOwned.push_back(kCard);
             if(this->numOfKnightsCard == 3){
-                armyCard army();
+                armyCard army;
                 this->cardsOwned.push_back(army);
                 this->points = this->points + 2;
             }
         }
         else if(type == 3){
-            winCard wCard();
+            winCard wCard;
             this->cardsOwned.push_back(wCard);
             this->points++;
         }
@@ -213,5 +213,22 @@ namespace ariel{
 
     void Player::printPoints(){
         cout << this->points << endl;
+    }
+
+    vector<string> Player::getMatterials(){
+        return this->matterials;
+    }
+
+    void Player::setSettelment(Settelment s){
+        this->settelments.push_back(s);
+        this->points++;
+    }
+
+    int Player::getPoints(){
+        return this->points;
+    }
+
+    string Player::getName(){
+        return this->Name;
     }
 }

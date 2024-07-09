@@ -1,3 +1,6 @@
+#ifndef CARD_HPP
+#define CARD_HPP
+
 #include <iostream>
 #include <string>
 
@@ -37,17 +40,7 @@ namespace ariel{
             static int numOfCard; // there are only 3 cards from this type.
         
         public:
-            knightCard() : Card(true){
-                if(numOfCard < 3){
-                    numOfCard++; // each time I "build" a new card the number of the
-                                //cards created should become bigger.
-                }
-                else{
-                    cerr << "cant 'build' the card " << endl;
-                    return;
-                }
-            }
-        
+            knightCard();
     };
 
     class armyCard : public Card{
@@ -60,3 +53,5 @@ namespace ariel{
             winCard() : Card(true){}     
     };
 }
+
+#endif // CARD_HPP

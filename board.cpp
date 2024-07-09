@@ -16,6 +16,14 @@ namespace ariel{
         return this->lands;
     }
 
+    vector<Settelment> Board::getSettelments(){
+        return this->settelments;
+    }
+
+    vector<Road> Board::getRoads(){
+        return this->roads;
+    }
+
     void Board::placeSettelmentOnBoard(vector<Land> crossRoad){
         Settelment s("settelment",crossRoad);
         this->settelments.push_back(s);

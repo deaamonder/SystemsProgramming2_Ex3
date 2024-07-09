@@ -18,42 +18,42 @@ int main()
     Player p3("Dana");
     Catan catan(p1, p2, p3);
     // Starting of the game. Every player places two settlements and two roads.
-    catan.ChooseStartingPlayer();   // should print the name of the starting player, assume it is Amit.
+    catan.chooseStartingPlayer();   // should print the name of the starting player, assume it is Amit.
     Board board = catan.getBoard(); // get the board of the game.
-    vector<string> places = {"Forest", "Hills"};
-    vector<int> placesNum = {5, 6};
-    p1.placeSettelemnt(places, placesNum, board);
-    p1.placeRoad(places, placesNum, board);
-    vector<string> places = {"Agricultural Land", "Desert"};
-    vector<int> placesNum = {3, 4};
-    p1.placeSettelemnt(places, placesNum, board);
-    p1.placeRoad(places, placesNum, board); // p1 chooses Forest, hills, Agricultural Land, Desert with numbers 5, 6, 3, 4.
+    vector<string> initialPlaces1 = {"Forest", "Hills"};
+    vector<int> initialPlacesNum1 = {5, 6};
+    p1.placeSettelment(initialPlaces1, initialPlacesNum1, board);
+    p1.placeRoad(initialPlaces1, initialPlacesNum1, board);
+    vector<string> initialPlaces2 = {"Agricultural Land", "Desert"};
+    vector<int> initialPlacesNum2 = {3, 4};
+    p1.placeSettelment(initialPlaces2, initialPlacesNum2, board);
+    p1.placeRoad(initialPlaces2, initialPlacesNum2, board); // p1 chooses Forest, hills, Agricultural Land, Desert with numbers 5, 6, 3, 4.
 
-    vector<string> places = {"Mountains", "Pasture Land"};
-    vector<int> placesNum = {4, 9};
-    p2.placeSettelemnt(places, placesNum, board);
-    p2.placeRoad(places, placesNum, board);
+    vector<string> initialPlaces3 = {"Mountains", "Pasture Land"};
+    vector<int> initialPlacesNum3 = {4, 9};
+    p2.placeSettelment(initialPlaces3, initialPlacesNum3, board);
+    p2.placeRoad(initialPlaces3, initialPlacesNum3, board);
     try
     {
-        p3.placeSettelemnt(places, placesNum, board); // p3 tries to place a settlement in the same location as p2.
+        p3.placeSettelment(initialPlaces3, initialPlacesNum3, board); // p3 tries to place a settlement in the same location as p2.
     }
     catch (const std::exception &e)
     {
         cout << e.what() << endl;
     }
-    vector<string> places = {"Forest", "Pasture Land"};
-    vector<int> placesNum = {5, 9};
-    p2.placeSettelemnt(places, placesNum, board);
-    p2.placeRoad(places, placesNum, board); // p2 chooses Mountains, Pasture Land, and Forest with numbers 4, 9, 5.
+    vector<string> initialPlaces4 = {"Forest", "Pasture Land"};
+    vector<int> initialPlacesNum4 = {5, 9};
+    p2.placeSettelment(initialPlaces4, initialPlacesNum4, board);
+    p2.placeRoad(initialPlaces4, initialPlacesNum4, board); // p2 chooses Mountains, Pasture Land, and Forest with numbers 4, 9, 5.
 
-    vector<string> places = {"Mountains", "Pasture Land"};
-    vector<int> placesNum = {3, 8};
-    p3.placeSettelemnt(places, placesNum, board);
-    p3.placeRoad(places, placesNum, board);
-    vector<string> places = {"Agricultural Land", "Pasture Land"};
-    vector<int> placesNum = {3, 9};
-    p3.placeSettelemnt(places, placesNum, board);
-    p3.placeRoad(places, placesNum, board); // p3 chooses Mountains, Pasture Land, Agricultural Land, Pasture Land with numbers 3, 8, 3, 9.
+    vector<string> initialPlaces5 = {"Mountains", "Pasture Land"};
+    vector<int> initialPlacesNum5 = {3, 8};
+    p3.placeSettelment(initialPlaces5, initialPlacesNum5, board);
+    p3.placeRoad(initialPlaces5, initialPlacesNum5, board);
+    vector<string> initialPlaces6 = {"Agricultural Land", "Pasture Land"};
+    vector<int> initialPlacesNum6 = {3, 9};
+    p3.placeSettelment(initialPlaces6, initialPlacesNum6, board);
+    p3.placeRoad(initialPlaces6, initialPlacesNum6, board); // p3 chooses Mountains, Pasture Land, Agricultural Land, Pasture Land with numbers 3, 8, 3, 9.
 
     // p1 has wood,bricks, and wheat, p2 has wood, ore, and wool, p3 has ore, wool, wheat.
     p1.rollDice();                                    // Lets say it's print 4. Then, p2 gets ore from the mountations.

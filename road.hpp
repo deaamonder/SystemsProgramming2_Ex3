@@ -1,3 +1,6 @@
+#ifndef ROAD_HPP
+#define ROAD_HPP
+
 #include <iostream>
 #include <string>
 
@@ -20,3 +23,5 @@ namespace ariel{
            string getName();
     };
 }
+
+#endif // ROAD_HPP
